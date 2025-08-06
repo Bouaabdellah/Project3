@@ -181,6 +181,7 @@ if (h2) {
 h2.textContent = `tech masters events ${eventDate.getFullYear()}`;
 }
 
+let differanceTime = eventDate - now;
 let date = document.querySelectorAll(".latest-events .box .date div span:first-of-type");
 let eventTimer = setInterval(() => {
     let day = Math.floor(differanceTime / 1000 / 60 / 60 / 24),
