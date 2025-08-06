@@ -175,6 +175,12 @@ if (eventDate < now) {
     eventDate = new Date(currentYear + 1, 8, 29);
 }
 
+const h2 = document.querySelector('#latest-events .text h2');
+if (h2) {
+// Update the h2 text with the new year
+h2.textContent = `tech masters events ${eventDate.getFullYear()}`;
+}
+
 let date = document.querySelectorAll(".latest-events .box .date div span:first-of-type");
 let eventTimer = setInterval(() => {
     let day = Math.floor(differanceTime / 1000 / 60 / 60 / 24),
