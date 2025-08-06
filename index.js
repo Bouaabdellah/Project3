@@ -187,7 +187,7 @@ let date = document.querySelectorAll(".latest-events .box .date div span:first-o
 let eventTimer = setInterval(() => {
     // Calculate current time fresh each iteration
     let currentTime = new Date().getTime();
-    let differenceTime = eventTimestamp - currentTime;
+    let differanceTime = eventTimestamp - currentTime;
     let day = Math.floor(differanceTime / 1000 / 60 / 60 / 24),
     hours = Math.floor(differanceTime / 1000 / 60 / 60 % 24),
     minutes = Math.floor(differanceTime / 1000 / 60 % 60),
