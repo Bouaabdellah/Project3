@@ -164,10 +164,18 @@ window.onscroll = function(){
 }
 
 // generate the events timer
-let eventDate = new Date("29 september 2024 00:00").getTime();
-let timeNow = Date.now();
+let now = new Date();
+let currentYear = now.getFullYear();
+
+// Create September 29th for current year
+let eventDate = new Date(currentYear, 8, 29); // Month is 0-indexed, so 8 = September
+    
+// If September 29th has already passed this year, use next year
+if (eventDate < now) {
+    eventDate = new Date(currentYear + 1, 8, 29);
+}
+
 let date = document.querySelectorAll(".latest-events .box .date div span:first-of-type");
-let differanceTime = eventDate - timeNow;
 let eventTimer = setInterval(() => {
     let day = Math.floor(differanceTime / 1000 / 60 / 60 / 24),
     hours = Math.floor(differanceTime / 1000 / 60 / 60 % 24),
